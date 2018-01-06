@@ -28,4 +28,16 @@ for name in enron_data:
         poi += 1
 print poi
 
+file = open("poi_names.txt", "r")
+names = file.read()
+inter_list = names.split("\n")
+for i in range(len(inter_list)):
+    inter_list[i] = inter_list[i][4:]
+    inter_list[i] = inter_list[i].split(", ")
+
+final_list = list()
+inter_list = inter_list[:-1]
+for lists in inter_list:
+    final_list.append(lists[1].upper() + " " + lists[0].upper())
+print len(final_list)
 
