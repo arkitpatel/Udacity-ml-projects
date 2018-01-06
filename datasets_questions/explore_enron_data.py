@@ -49,3 +49,33 @@ for name in enron_data:
     if "Jeffrey".upper() in name and "Skilling".upper() in name:
         print enron_data[name], name
 
+for name in enron_data:
+    if "LAY"  in name:
+        print enron_data[name]["total_payments"], name
+    if "SKILLING" in name:
+        print enron_data[name]["total_payments"], name
+    if "FASTOW" in name:
+        print enron_data[name]["total_payments"], name
+salary = 0
+email = 0
+for name in enron_data:
+    if enron_data[name]['salary'] != "NaN":
+        salary += 1
+
+    if enron_data[name]['email_address'] != "NaN":
+        email += 1
+print salary, email
+
+payments = 0
+
+for name in enron_data:
+    if enron_data[name]['total_payments'] == "NaN":
+        payments += 1
+print "Percentage =", (float(payments)/len(enron_data))*100, "%"
+
+payments = 0
+
+for name in enron_data:
+    if enron_data[name]['total_payments'] == "NaN" and enron_data[name]['poi'] is True:
+        payments += 1
+print "Percentage =", (float(payments)/len(enron_data))*100, "%"
