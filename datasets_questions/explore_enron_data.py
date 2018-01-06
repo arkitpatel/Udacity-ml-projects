@@ -41,3 +41,11 @@ for lists in inter_list:
     final_list.append(lists[1].upper() + " " + lists[0].upper())
 print len(final_list)
 
+for name in enron_data:
+    if "JAMES" in name and "Prentice".upper() in name:
+        print enron_data[name], name
+    if "Wesley".upper() in name and "Colwell".upper() in name:
+        print enron_data[name], name
+    if "Jeffrey".upper() in name and "Skilling".upper() in name:
+        print enron_data[name], name
+
